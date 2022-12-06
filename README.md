@@ -15,6 +15,8 @@ Our project consists of an Clinical Appointment with the following functionaliti
 
 · search for previous appointments they made
 
+ · cancel an appointment
+
 ## for an admin (doctor):
 
 · update appointment
