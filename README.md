@@ -2,8 +2,10 @@
 special topics project
 
 #### ABBOUD Ali
-
 #### FAGBURE Oluwayomi
+#### RADULESCU Alexandru-Vlad
+#### GABRIAN Ioan-Stefan
+
 
 ----------------------------------------
 
