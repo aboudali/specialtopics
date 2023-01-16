@@ -27,7 +27,7 @@ Our project consists of an Clinical Appointment with the following functionaliti
 
 · see all appointments 
 
-## The data stored in the database is related to the books:
+## The data stored in the database is related to the Appointments:
 
 o patient's Full Name
 
