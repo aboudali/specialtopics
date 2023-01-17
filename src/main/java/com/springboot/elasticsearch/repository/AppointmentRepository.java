@@ -15,6 +15,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
  */
 public interface AppointmentRepository extends ElasticsearchRepository<Appointment, String> {
 
+//	Appointment updateAppointment(String id);
 
 	/**
 	 * Show all appointments
@@ -46,10 +47,11 @@ public interface AppointmentRepository extends ElasticsearchRepository<Appointme
 	/**
 	 * Find by age.
 	 * 
-	 * @param age
+	 * @param id
 	 *            the age to find.
 	 * 
 	 * @return the list.
 	 */
-//	List<Appointment> findByAge(int age);
+
+
 }

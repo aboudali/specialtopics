@@ -5,13 +5,7 @@ import java.util.List;
 import com.springboot.elasticsearch.dto.AppointmentDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.springboot.elasticsearch.service.EsService;
 
@@ -22,16 +16,11 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * Controller.
- * 
- * WS for ES database.
- * 
- * 
  *
  */
-@SwaggerDefinition(info = @Info(title = "Elastic search controller", version = "v1", description = "ES CRUD"), host = "http://localhost:8081/es")
+@SwaggerDefinition(info = @Info(title = "Medical Clinic Controller", version = "v1", description = "Medical Clinic Appointment"), host = "http://localhost:8081/es")
 @RestController
 @RequestMapping(path = "/appointment")
-//@RequestMapping(path = "/es")
 @Slf4j
 public class AppointmentController {
 
@@ -53,7 +42,7 @@ public class AppointmentController {
 	}
 
 	@GetMapping("/findById/{id}")
-	@ApiOperation(value = "Find by ID.")
+	@ApiOperation(value = "Find appointment by ID.")
 	public AppointmentDto findById(@PathVariable String id) {
 		return esService.findById(id);
 	}
@@ -64,10 +53,27 @@ public class AppointmentController {
 		esService.book(appointmentDto);
 	}
 
-	@DeleteMapping("/delete/{patientsCNP}")
-	@ApiOperation(value = "Delete by CNP.")
+	@DeleteMapping("/delete/{id}")
+	@ApiOperation(value = "Delete appointment by Id.")
 	public ResponseEntity<String> deleteById(@PathVariable String id) {
-		return esService.deleteByCNP(id);
+		return esService.deleteById(id);
 	}
+
+//
+//	@PutMapping("/update/{id}")
+//	@ApiOperation(value = "Update appointment by Id.")
+//	public ResponseEntity<String> updateAppointment(@PathVariable String id) {
+//		return esService.updateAppointment(id);
+//	}
+
+
+	@PutMapping("/update/{id}")
+	@ApiOperation(value = "Update appointment by Id.")
+	public AppointmentDto updateAppointment(@PathVariable String id) {
+//		return esService.updateAppointment(id);
+		return null;
+	}
+
+
 
 }

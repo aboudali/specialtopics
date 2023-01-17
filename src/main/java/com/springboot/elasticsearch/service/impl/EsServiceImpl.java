@@ -44,6 +44,11 @@ public class EsServiceImpl implements EsService {
     }
 
     @Override
+    public AppointmentDto updateAppointment(String id) {
+        return null;
+    }
+
+    @Override
     public AppointmentDto findById(String idToFind) {
         return appointmentFactory.getInstance(appointmentRepository.findById(idToFind));
     }
@@ -69,8 +74,14 @@ public class EsServiceImpl implements EsService {
         appointmentRepository.save(entity);
     }
 
+
+
+
+
+
+
     @Override
-    public ResponseEntity<String> deleteByCNP(String CNP) {
+    public ResponseEntity<String> deleteById(String CNP) {
         if (appointmentRepository.existsById(CNP)) {
             appointmentRepository.deleteById(CNP);
             return new ResponseEntity<String>("Appointment deleted.", HttpStatus.OK);

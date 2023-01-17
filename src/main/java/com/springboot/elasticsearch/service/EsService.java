@@ -20,6 +20,17 @@ public interface EsService {
 	List<AppointmentDto> findAll();
 	Page<Appointment> findAll(Pageable pageable);
 
+	/**
+	 * Find by patientsCNP.
+	 *
+	 * @param patientsCNP
+	 *            the first name to find.
+	 *
+	 * @return the list of customer matching on find.
+	 */
+
+	AppointmentDto updateAppointment(String id);
+
 
 
 	/**
@@ -63,6 +74,10 @@ public interface EsService {
 
 	void book(AppointmentDto appointmentDto);
 
-	ResponseEntity<String> deleteByCNP(String CNP);
+
+
+
+
+	ResponseEntity<String> deleteById(String id);
 
 }
